@@ -56,3 +56,32 @@ height: auto;
   background-size: contain;
   transform: translateY(50%) rotate(0.12turn);
 }
+
+.accordion-input {
+  display: none;
+}
+
+.accordion-input:checked ~ .accordion-image {
+  display: block;
+}
+.accordion-input:hover ~ .accordion-image {
+    display: block;
+  }
+  .accordion-input:hover ~ .accordion-label::after {
+    display: block;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+  }
+  .accordion:hover .accordion-label{
+    color: black;
+  }
+  .accordion:hover .accordion-label::after{
+    display: block;
+    
+ 
+  }
+  .accordion-input:checked ~ .accordion-label::after {
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+
+  }
