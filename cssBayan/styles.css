@@ -3,7 +3,7 @@
 }
 
 .accordion {
-  margin-top: 10vh;
+  margin-top: 1vh;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -38,7 +38,7 @@ display: none;
 }
 img{
 width: 100%;
-height: auto;
+max-height: 50vh;
 }
 .accordion-label:hover {
   background: rgba(0, 0, bl0ue, 0.1);
@@ -63,6 +63,15 @@ height: auto;
 
 .accordion-input:checked ~ .accordion-image {
   display: block;
+
+}
+.accordion-input:checked ~ .accordion-label {
+  display: block;
+color: black;
+}
+.accordion-input:active ~ .accordion-label:active {
+
+color: blue;
 }
 .accordion-input:hover ~ .accordion-image {
     display: block;
