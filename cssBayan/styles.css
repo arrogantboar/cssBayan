@@ -30,8 +30,8 @@
 .accordion-label {
   padding: 1vh 1vw;
   background-color: whitesmoke;
-  border-radius: 3px;
-  border: 2px solid;
+  border-radius: 0.5rem;
+  border: 0.08rem solid;
   border-style: ridge none none none;
   border-color: black;
   display: flex;
@@ -40,7 +40,11 @@
   font-weight: 500;
   cursor: pointer;
 }
+.accordion-label:active, .accordion-image:active {
+  opacity: 0.5;
+}
 .accordion-image {
+  cursor: pointer;
   max-height: 0;
   overflow: hidden;
   line-height: 1.6;
@@ -80,23 +84,35 @@ img {
   overflow: hidden;
   transition: max-height 0.6;
 }
-.accordion-input:checked ~ .accordion-label {
+.accordion-input:checked ~ .accordion-label .accordion-image {
   display: flex;
   color: black;
 }
 .accordion-input:active ~ .accordion-label:active {
   color: blue;
+  
 }
 .accordion-input:hover ~ .accordion-image,
 img {
+  display: flex;
   max-height: 35vh;
   overflow: hidden;
   transition: max-height 0.6s;
+}
+.accordion-image:hover, img:hover{
+  display: flex;
+  max-height: 35vh;
 }
 .accordion-input:hover ~ .accordion-label::after {
   display: flex;
   transform: translateY(-50%);
   transition: transform 0.4s;
+}
+.accordion-label:active ~ .accordion-image {
+  opacity: 0.5;
+}
+.accordion-image:active ~ .accordion-label, .accordion-input:checked {
+  opacity: 0.5;
 }
 .accordion:hover .accordion-label {
   color: black;
