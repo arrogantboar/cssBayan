@@ -1,18 +1,21 @@
 * {
   margin: 0;
 }
-.accordion div, .accordion .accordion-input, .accordion label, .accordion .accordion-image, .accordion img{
-    transition: all 0.5s ease-in-out;
+.accordion div,
+.accordion .accordion-input,
+.accordion .accordion-image,
+.accordion img {
+  transition: all 0.5s ease-in-out;
 }
-#meme1[type='submit']{
+#meme1[type="submit"] {
   color: #000;
 }
-.pull{
+.pull {
   margin: 0 auto;
- width: 5vw;
+  width: 5vw;
 }
-.bayan{
-  color:black
+.bayan {
+  color: black;
 }
 .accordion {
   margin-top: 3vh;
@@ -23,53 +26,45 @@
   color: blue;
   max-width: 30vw;
 }
-.accordion-label{
-  padding: 1vh 1vw;
-}
+
 .accordion-label {
+  padding: 1vh 1vw;
   background-color: whitesmoke;
   border-radius: 3px;
   border: 2px solid;
   border-style: ridge none none none;
   border-color: black;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
   font-weight: 500;
   cursor: pointer;
-  position: relative;
-  transition: background 0.1s;
-  font-size: 0.85em;
-}
-.accordion-label:hover {
-  background: rgba(0, 0, bl0ue, 0.1);
 }
 .accordion-image {
-
-max-height: 0;
-
+  max-height: 0;
+  overflow: hidden;
   line-height: 1.6;
-background: white;
-
+  background: white;
 }
-img{
-
-display: flex;
-margin: 0 auto;
-width: 80%;
-max-height: 35vh;
-max-width: 20vw;
+img {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  max-height: 0;
+  max-width: 20vw;
+  overflow: hidden;
 }
 .accordion-label:hover {
   background: rgba(0, 0, bl0ue, 0.1);
 }
 .accordion-label::after {
   content: "";
-  position: absolute;
-  top: 30%;
   display: none;
-  right: 20px;
+  margin-left: auto;
+
   width: 1vw;
   height: 1vh;
-  background-image: url('x-symbol-svgrepo-com.svg');
+  background-image: url("x-symbol-svgrepo-com.svg");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(50%) rotate(0.12turn);
@@ -79,42 +74,94 @@ max-width: 20vw;
   display: none;
 }
 
-.accordion-input:checked ~ .accordion-image{
+.accordion-input:checked ~ .accordion-image,
+img {
   max-height: 40vh;
   overflow: hidden;
- transition: max-height 0.6s;
-/*   display: block; */
-
+  transition: max-height 0.6;
 }
 .accordion-input:checked ~ .accordion-label {
-  
-  display: block;
-color: black;
+  display: flex;
+  color: black;
 }
-.accordion-input:active  .accordion-label:active {
-color: blue;
+.accordion-input:active ~ .accordion-label:active {
+  color: blue;
 }
-.accordion-input:hover ~ .accordion-image {
+.accordion-input:hover ~ .accordion-image,
+img {
   max-height: 40vh;
   overflow: hidden;
- transition: max-height 0.6s;
-  /*   display: block; */
-  }
-  .accordion-input:hover ~ .accordion-label::after {
-    display: block;
-    transform: translateY(-50%);
-    transition: transform 0.4s;
-  }
-  .accordion:hover .accordion-label{
-    color: black;
-  }
-  .accordion:hover .accordion-label::after{
-    display: block;
-    
- 
-  }
-  .accordion-input:checked ~ .accordion-label::after {
-    transform: translateY(-50%);
-    transition: transform 0.4s;
+  transition: max-height 0.6s;
+}
+.accordion-input:hover ~ .accordion-label::after {
+  display: flex;
+  transform: translateY(-50%);
+  transition: transform 0.4s;
+}
+.accordion:hover .accordion-label {
+  color: black;
+}
+.accordion:hover .accordion-label::after {
+  display: flex;
+}
+.accordion-input:checked ~ .accordion-label::after {
+  transform: translateY(-50%);
+  transition: transform 0.4s;
+}
 
+@media (max-width: 820px) {
+  body {
+    background-color: aqua;
   }
+  .accordion {
+    max-width: 50vw;
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
+  }
+  .accordion-label {
+    display: flex;
+    font-size: 1em;
+    padding: 1.5vh 1.5vw;
+  }
+  .accordion-label::after {
+    width: 1.5vh;
+    height: 1.5vh;
+    display: flex;
+  }
+  .accordion-input:checked ~ .accordion-image {
+    max-height: 70vh;
+    overflow: hidden;
+    transition: max-height 0.6s;
+  }
+  .accordion-input:hover ~ .accordion-image {
+    max-height: 70vh;
+    overflow: hidden;
+    transition: max-height 0.6s;
+  }
+}
+
+@media (max-width: 650px) {
+  .accordion {
+    max-width: 70vw;
+  }
+  .accordion-label::after {
+    width: 1.5vh;
+    height: 1.5vh;
+  }
+  .accordion-label {
+    font-size: 0.7em;
+  }
+  .accordion-input:checked ~ .accordion-image {
+    max-height: 60vh;
+    overflow: hidden;
+    transition: max-height 0.6s;
+  }
+  .accordion-input:hover ~ .accordion-image {
+    max-height: 60vh;
+    overflow: hidden;
+    transition: max-height 0.6s;
+  }
+}
